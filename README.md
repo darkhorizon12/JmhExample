@@ -160,7 +160,7 @@
 
   - Create Target Class
     Note that create main method like this
-      public static void main(String[] args) throws Exception{
+      <pre><code>public static void main(String[] args) throws Exception{
         Options opts = new OptionsBuilder()
                   .include(".*")
                   .warmupIterations(10)
@@ -170,7 +170,7 @@
 
               new Runner(opts).run();
 	  }
- 
+ 	</code></pre>
  - To build
     Run As -> Run As -> Maven Build (goals => enter 'clean install')
  - To execute
