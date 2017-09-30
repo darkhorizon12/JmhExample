@@ -11,12 +11,14 @@
           -DartifactId=jmh-sample -Dversion=1  // project name
     
     $ cd jmh-sample   // move to project folder
+    
     $ mvn clean install // maven build
+    
     $ java -jar target/benchmarks.jar  // execute application
     
 2. Create Jmh Project in Eclipse
   - pom.xml
-  
+  ```
      <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
         <modelVersion>4.0.0</modelVersion>
@@ -157,21 +159,19 @@
         </build>
 
     </project>
-
+```
   - Create Target Class
     Note that create main method like this
-      <pre><code>public static void main(String[] args) throws Exception{
+      <pre><code>public static void main(String[] args) throws Exception{
         Options opts = new OptionsBuilder()
                   .include(".*")
                   .warmupIterations(10)
                   .measurementIterations(10)
                   .forks(1)
                   .build();
-
               new Runner(opts).run();
 	  }
  	</code></pre>
  - To build
     Run As -> Run As -> Maven Build (goals => enter 'clean install')
  - To execute
-    Run As -> Java Application (select 'Main - org.openjdk.jmh)
