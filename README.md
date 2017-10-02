@@ -172,7 +172,11 @@
               new Runner(opts).run();
 	  }
  	</code></pre>
+ 
  - To build
+ 
     Run As -> Run As -> Maven Build (goals => enter 'clean install')
+ 
  - To execute 
+ 
     Run As -> Java Application (select 'Main - org.openjdk.jmh')
